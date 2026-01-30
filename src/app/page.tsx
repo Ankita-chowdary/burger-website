@@ -21,7 +21,7 @@ export default function Home() {
         <div className="max-w-4xl text-center px-6">
           <h2 className="text-5xl md:text-7xl font-serif mb-8">Join the Revolution.</h2>
           <p className="text-xl md:text-2xl font-sans leading-relaxed text-[#00735C]/80">
-            HOMIE Burger isn't just a place to eat. It's a sanctuary for those who crave more than just a quick bite.
+            HOMIE Burger isn&apos;t just a place to eat. It&apos;s a sanctuary for those who crave more than just a quick bite.
             We source every ingredient from local farms, ensuring that every bite tells a story of quality and passion.
           </p>
           <div className="mt-12 flex gap-8 justify-center font-sans font-bold text-xs tracking-[0.3em] uppercase">

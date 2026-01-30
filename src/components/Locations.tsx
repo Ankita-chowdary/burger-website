@@ -101,7 +101,7 @@ export default function Locations() {
                             </div>
                             <h4 className="text-2xl font-serif text-white mb-4">Interactive Map Coming Soon</h4>
                             <p className="text-white/50 font-sans text-sm max-w-xs mx-auto mb-8">
-                                We're currently fine-tuning our localized experience. In the meantime, find our spots above.
+                                We&apos;re currently fine-tuning our localized experience. In the meantime, find our spots above.
                             </p>
                             <button className="px-8 py-3 bg-white/5 border border-white/20 text-white rounded-full font-sans font-bold uppercase text-[10px] tracking-widest hover:bg-white hover:text-[#00735C] transition-all">
                                 Open Google Maps
