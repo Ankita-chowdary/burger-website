@@ -1,6 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    /* No special config needed for local dev in this version */
+    output: 'export',
+    basePath: '/burger-website',
+    images: {
+        unoptimized: true,
+    },
 };
 
 export default nextConfig;

@@ -4,7 +4,8 @@ import { useEffect, useRef, useState, useMemo } from "react";
 import { useScroll, useTransform, motion, useSpring, AnimatePresence, useMotionValueEvent } from "framer-motion";
 
 const TOTAL_FRAMES = 240;
-const FRAME_PREFIX = "/burger-frames/ezgif-frame-";
+const BASE_PATH = "/burger-website";
+const FRAME_PREFIX = `${BASE_PATH}/burger-frames/ezgif-frame-`;
 const FRAME_SUFFIX = ".jpg";
 
 export default function BurgerScroll() {

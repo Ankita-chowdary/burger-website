@@ -13,7 +13,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "HOMIE Coffee | The Burger Journey",
+  title: "HOMIE Burger | The Journey",
   description: "A high-end scrollytelling experience showing the journey of a HOMIE Burger.",
 };
 
