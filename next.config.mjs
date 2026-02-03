@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     output: 'export',
-    basePath: "/burger",
-    assetPrefix: "/burger/",
+    basePath: process.env.NODE_ENV === 'production' ? '/burger-website' : '',
+    assetPrefix: process.env.NODE_ENV === 'production' ? '/burger-website/' : '',
     images: {
         unoptimized: true,
     },
