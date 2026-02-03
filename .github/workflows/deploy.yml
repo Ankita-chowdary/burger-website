@@ -53,8 +53,19 @@ jobs:
         run: npm install
       - name: Build with Next.js
         run: npm run build
-        env:
-          NODE_ENV: production
+      - name: Debug Workspace
+        run: |
+          echo "Current Path: $(pwd)"
+          echo "Top Level Files:"
+          ls -F
+          if [ -d "out" ]; then
+            echo "Found 'out' directory. Contents:"
+            ls -F out
+          else
+            echo "CRITICAL: 'out' directory is MISSING."
+            echo "Searching for any exported directories:"
+            find . -maxdepth 2 -type d
+          fi
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
