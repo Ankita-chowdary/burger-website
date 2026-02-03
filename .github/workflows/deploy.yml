@@ -20,52 +20,19 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Detect package manager
-        id: detect-package-manager
-        run: |
-          if [ -f "${{ github.workspace }}/package-lock.json" ]; then
-            echo "manager=npm" >> $GITHUB_OUTPUT
-            echo "command=install" >> $GITHUB_OUTPUT
-            echo "runner=npx --no-install" >> $GITHUB_OUTPUT
-            exit 0
-          else
-            echo "Unable to determine package manager" >> $GITHUB_ERROR
-            exit 1
-          fi
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: ${{ steps.detect-package-manager.outputs.manager }}
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-        with:
-          static_site_generator: next
-      - name: Restore cache
-        uses: actions/cache@v4
-        with:
-          path: |
-            .next/cache
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
-          restore-keys: |
-            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
+          cache: "npm"
+
       - name: Install dependencies
-        run: npm install
-      - name: Build with Next.js
+        run: npm ci
+
+      - name: Build
         run: npm run build
-      - name: Debug Workspace
-        run: |
-          echo "Current Path: $(pwd)"
-          echo "Top Level Files:"
-          ls -F
-          if [ -d "out" ]; then
-            echo "Found 'out' directory. Contents:"
-            ls -F out
-          else
-            echo "CRITICAL: 'out' directory is MISSING."
-            echo "Searching for any exported directories:"
-            find . -maxdepth 2 -type d
-          fi
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
